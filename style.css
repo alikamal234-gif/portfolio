@@ -1,0 +1,225 @@
+/* ==========================================
+   ALI KAMAL PORTFOLIO — STYLE.CSS
+   Dark / Light Mode + Full Theme System
+   ========================================== */
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* ---- DARK MODE (default) ---- */
+:root,
+[data-theme="dark"] {
+  --bg:           #0A0A0A;
+  --bg-secondary: #111111;
+  --bg-card:      #0d0d0d;
+  --text-primary: #F0EDE8;
+  --text-muted:   #888888;
+  --text-subtle:  #444444;
+  --border:       #1e1e1e;
+  --border-hover: #2a2a2a;
+  --accent:       #4F9EFF;
+  --nav-bg:       rgba(10, 10, 10, 0.92);
+  --skill-bar-bg: #1a1a1a;
+  --icon-bg:      rgba(79, 158, 255, 0.10);
+  --stroke-color: #F0EDE8;
+}
+
+/* ---- LIGHT MODE ---- */
+[data-theme="light"] {
+  --bg:           #F8F7F4;
+  --bg-secondary: #EFEFEC;
+  --bg-card:      #FFFFFF;
+  --text-primary: #111111;
+  --text-muted:   #666666;
+  --text-subtle:  #999999;
+  --border:       #DDDDDD;
+  --border-hover: #CCCCCC;
+  --accent:       #2563EB;
+  --nav-bg:       rgba(248, 247, 244, 0.92);
+  --skill-bar-bg: #E5E5E5;
+  --icon-bg:      rgba(37, 99, 235, 0.08);
+  --stroke-color: #111111;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background-color: var(--bg);
+  color: var(--text-primary);
+  cursor: none;
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+/* ---- SEMANTIC THEME CLASSES ---- */
+.primary-text  { color: var(--text-primary); }
+.muted-text    { color: var(--text-muted); }
+.subtle-text   { color: var(--text-subtle); }
+.text-accent   { color: var(--accent) !important; }
+.bg-accent     { background-color: var(--accent) !important; }
+.border-accent { border-color: var(--accent) !important; }
+
+.card-border {
+  border: 1px solid var(--border);
+  background-color: var(--bg-card);
+  transition: border-color 0.3s ease, background-color 0.4s ease;
+}
+
+.section-border { border-top: 1px solid var(--border); }
+
+.badge-border {
+  border: 1px solid var(--border-hover);
+}
+
+.icon-bg {
+  background-color: var(--icon-bg);
+}
+
+.skill-bar-bg {
+  background-color: var(--skill-bar-bg);
+}
+
+/* ---- NAVIGATION ---- */
+nav {
+  background: var(--nav-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid transparent;
+  transition: background 0.4s ease;
+}
+
+.nav-blur { /* alias */ }
+
+.nav-link {
+  color: var(--text-muted);
+  text-decoration: none;
+  position: relative;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -3px; left: 0;
+  width: 0; height: 1px;
+  background: var(--accent);
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover { color: var(--text-primary); }
+.nav-link:hover::after { width: 100%; }
+
+/* ---- THEME TOGGLE BUTTON ---- */
+.theme-btn {
+  color: var(--text-muted);
+  border-color: var(--border);
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.theme-btn:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+/* ---- CUSTOM CURSOR ---- */
+#cursor {
+  transform: translate(-50%, -50%);
+  will-change: transform;
+  background-color: var(--accent) !important;
+  transition: width 0.2s ease, height 0.2s ease;
+}
+
+#cursor.cursor-hover { width: 2.5rem; height: 2.5rem; }
+
+/* ---- NOISE OVERLAY ---- */
+.noise-overlay {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 200px 200px;
+}
+
+/* ---- GRID BACKGROUND ---- */
+.grid-bg {
+  background-image:
+    linear-gradient(var(--border) 1px, transparent 1px),
+    linear-gradient(90deg, var(--border) 1px, transparent 1px);
+  background-size: 80px 80px;
+}
+
+/* ---- TEXT STROKE ---- */
+.text-stroke-theme {
+  -webkit-text-stroke: 2px var(--stroke-color);
+  color: transparent;
+}
+
+/* ---- SCROLL LINE ---- */
+.scroll-line {
+  background-color: var(--text-primary);
+  animation: scrollAnim 2s ease-in-out infinite;
+}
+
+@keyframes scrollAnim {
+  0%   { transform: scaleY(0); transform-origin: top; opacity: 1; }
+  50%  { transform: scaleY(1); transform-origin: top; opacity: 1; }
+  51%  { transform-origin: bottom; }
+  100% { transform: scaleY(0); transform-origin: bottom; opacity: 0; }
+}
+
+/* ---- REVEAL ANIMATIONS ---- */
+.reveal-item {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal-item.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ---- SKILL BARS ---- */
+.skill-bar {
+  width: 0%;
+  transition: width 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* ---- SKILL CARD ---- */
+.skill-card {
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+.skill-card:hover { transform: translateY(-4px); }
+
+/* ---- PROJECT CARD ---- */
+.project-card {
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+.project-card:hover { transform: translateY(-2px); }
+
+/* ---- CONTACT LINKS ---- */
+.contact-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ---- SCROLLBAR ---- */
+::-webkit-scrollbar { width: 3px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--accent); }
+
+/* ---- TEXT SELECTION ---- */
+::selection {
+  background: var(--accent);
+  color: #ffffff;
+}
+
+/* ---- PAGE FADE IN ---- */
+body { animation: pageIn 0.5s ease; }
+
+@keyframes pageIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* ---- RESPONSIVE: hide cursor on touch ---- */
+@media (max-width: 768px) {
+  #cursor { display: none; }
+  body { cursor: auto; }
+}

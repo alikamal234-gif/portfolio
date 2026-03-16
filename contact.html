@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact — Ali Kamal</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:wght@300;400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet"/>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            syne: ['Syne', 'sans-serif'],
+            mono: ['DM Mono', 'monospace'],
+            serif: ['Instrument Serif', 'serif'],
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class=" font-syne overflow-x-hidden page-transition">
+
+  <div id="cursor" class="fixed w-4 h-4 bg-accent rounded-full pointer-events-none z-[9999] mix-blend-difference transition-transform duration-100"></div>
+  <div class="noise-overlay fixed inset-0 pointer-events-none z-50 opacity-[0.03]"></div>
+
+  <!-- NAV -->
+  <nav class="fixed top-0 left-0 right-0 z-40 px-8 py-6 flex justify-between items-center">
+    <a href="index.html" class="font-mono text-xs text-accent tracking-[0.3em] uppercase hover:opacity-70 transition-opacity">← AK_2025</a>
+    <div class="flex gap-8 text-xs font-mono text-[#888] tracking-widest uppercase">
+      <a href="index.html#about" class="nav-link hover:text-[#F0EDE8] transition-colors">À propos</a>
+      <a href="projects.html" class="nav-link hover:text-[#F0EDE8] transition-colors">Projets</a>
+      <a href="index.html#skills" class="nav-link hover:text-[#F0EDE8] transition-colors">Skills</a>
+    </div>
+    <!-- Theme Toggle -->
+      <button id="themeToggle" onclick="toggleTheme()" class="theme-btn w-10 h-10 flex items-center justify-center rounded-full border transition-all duration-300 hover:scale-110" title="Changer le thème">
+        <svg id="sunIcon" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        <svg id="moonIcon" class="hidden" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+  </nav>
+
+  <!-- HEADER -->
+  <section class="pt-40 pb-16 px-8">
+    <div class="max-w-7xl mx-auto">
+      <p class="font-mono text-xs text-accent tracking-[0.4em] uppercase mb-6 reveal-item">Disponible pour stage</p>
+      <h1 class="text-[clamp(3rem,10vw,8rem)] font-extrabold leading-[0.9] reveal-item">
+        CONTACT<br/><span class="text-stroke">MOI</span>
+      </h1>
+    </div>
+  </section>
+
+  <!-- CONTACT CONTENT -->
+  <section class="px-8 pb-32">
+    <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-16">
+
+      <!-- Left: Info -->
+      <div class="space-y-8">
+        <p class="text-[#555] leading-relaxed text-lg reveal-item max-w-md font-serif italic">
+          "Je suis actuellement en recherche active d'un stage rémunéré en développement web (Front-End / Back-End) pour valider ma première année à Youcode."
+        </p>
+
+        <div class="space-y-3 reveal-item">
+          <a href="mailto:alikamal0675@gmail.com" class="contact-link flex items-center gap-4 p-5 border border-[#1e1e1e] group hover:border-accent transition-all">
+            <div class="w-10 h-10 bg-[#111] flex items-center justify-center text-sm">✉️</div>
+            <div>
+              <p class="font-mono text-[0.65rem] text-[#444] uppercase tracking-widest">Email</p>
+              <p class="font-semibold text-sm">alikamal0675@gmail.com</p>
+            </div>
+            <span class="ml-auto text-[#333] group-hover:text-accent transition-colors">→</span>
+          </a>
+
+          <a href="tel:0657499843" class="contact-link flex items-center gap-4 p-5 border border-[#1e1e1e] group hover:border-accent transition-all">
+            <div class="w-10 h-10 bg-[#111] flex items-center justify-center text-sm">📱</div>
+            <div>
+              <p class="font-mono text-[0.65rem] text-[#444] uppercase tracking-widest">Téléphone</p>
+              <p class="font-semibold text-sm">06 57 49 98 43</p>
+            </div>
+            <span class="ml-auto text-[#333] group-hover:text-accent transition-colors">→</span>
+          </a>
+
+          <a href="https://www.linkedin.com/in/ali-kamal-0902933a-k0/" target="_blank" class="contact-link flex items-center gap-4 p-5 border border-[#1e1e1e] group hover:border-accent transition-all">
+            <div class="w-10 h-10 bg-[#111] flex items-center justify-center text-sm">💼</div>
+            <div>
+              <p class="font-mono text-[0.65rem] text-[#444] uppercase tracking-widest">LinkedIn</p>
+              <p class="font-semibold text-sm">ali-kamal-0902933a-k0</p>
+            </div>
+            <span class="ml-auto text-[#333] group-hover:text-accent transition-colors">→</span>
+          </a>
+
+          <a href="https://github.com/alikamal234-gif" target="_blank" class="contact-link flex items-center gap-4 p-5 border border-[#1e1e1e] group hover:border-accent transition-all">
+            <div class="w-10 h-10 bg-[#111] flex items-center justify-center text-sm">🐙</div>
+            <div>
+              <p class="font-mono text-[#444] text-[0.65rem] uppercase tracking-widest">GitHub</p>
+              <p class="font-semibold text-sm">alikamal234-gif</p>
+            </div>
+            <span class="ml-auto text-[#333] group-hover:text-accent transition-colors">→</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Right: Contact Form -->
+      <div class="reveal-item">
+        <p class="font-mono text-xs text-[#444] uppercase tracking-widest mb-8">Envoyer un message</p>
+
+        <div class="space-y-4" id="contactForm">
+          <div>
+            <label class="font-mono text-[0.65rem] text-[#444] uppercase tracking-widest block mb-2">Nom</label>
+            <input
+              type="text"
+              id="inputName"
+              placeholder="Votre nom"
+              class="w-full bg-transparent border border-[#1e1e1e] px-5 py-4 font-syne text-sm text-[#F0EDE8] placeholder-[#333] focus:outline-none focus:border-accent transition-colors"
+            />
+          </div>
+          <div>
+            <label class="font-mono text-[0.65rem] text-[#444] uppercase tracking-widest block mb-2">Email</label>
+            <input
+              type="email"
+              id="inputEmail"
+              placeholder="votre@email.com"
+              class="w-full bg-transparent border border-[#1e1e1e] px-5 py-4 font-syne text-sm text-[#F0EDE8] placeholder-[#333] focus:outline-none focus:border-accent transition-colors"
+            />
+          </div>
+          <div>
+            <label class="font-mono text-[0.65rem] text-[#444] uppercase tracking-widest block mb-2">Message</label>
+            <textarea
+              id="inputMessage"
+              rows="5"
+              placeholder="Votre message..."
+              class="w-full bg-transparent border border-[#1e1e1e] px-5 py-4 font-syne text-sm text-[#F0EDE8] placeholder-[#333] focus:outline-none focus:border-accent transition-colors resize-none"
+            ></textarea>
+          </div>
+          <button
+            onclick="sendMessage()"
+            class="w-full bg-accent text-[#0A0A0A] px-8 py-4 font-bold text-sm uppercase tracking-widest hover:bg-[#F0EDE8] transition-colors"
+          >
+            Envoyer via Email →
+          </button>
+          <p id="formFeedback" class="font-mono text-xs text-center text-[#444] hidden"></p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-[#111] px-8 py-8 flex flex-col md:flex-row justify-between items-center gap-4">
+    <p class="font-mono text-xs text-[#333]">© 2025 Ali Kamal — Tous droits réservés</p>
+    <a href="index.html" class="font-mono text-xs text-[#555] hover:text-accent transition-colors">← Retour à l'accueil</a>
+  </footer>
+
+  <script src="main.js"></script>
+  <script src="contact.js"></script>
+</body>
+</html>
